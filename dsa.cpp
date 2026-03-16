@@ -21,7 +21,7 @@ int main() {
         }
     }
 
-    cout << "Largest element is: " << max;
+    cout << "the Largest element is: " << max;
 
     return 0;
 }
