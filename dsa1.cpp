@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int num[6];
-void largest(){
+void largest_element(){
     int current_max;
     current_max=num[0];
     for(int i=0; i<6;i++){
@@ -18,7 +18,7 @@ int main(){
     num[3]=5;
     num[4]=4;
     num[5]=6;
-    largest();
+    largest_element();
     return 0;
 }
 
