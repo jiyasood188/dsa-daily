@@ -1,27 +1,26 @@
 #include <iostream>
 using namespace std;
-
-int main() {
-    int n;
-    cout << "Enter number of elements: ";
-    cin >> n;
-
-    int arr[n];
-
-    cout << "Enter elements:\n";
-    for(int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
-
-    int max = arr[0];
-
-    for(int i = 1; i < n; i++) {
-        if(arr[i] > max) {
-            max = arr[i];
+int num[6];
+void largest(){
+    int current_max;
+    current_max=num[0];
+    for(int i=0; i<6;i++){
+        if(num[i]>current_max){
+            current_max=num[i];
         }
     }
-
-    cout << "Largest element is: " << max;
-
+    cout<<current_max<<endl;
+}
+int main(){
+    num[0]=3;
+    num[1]=2;
+    num[2]=1;
+    num[3]=5;
+    num[4]=4;
+    num[5]=6;
+    largest();
     return 0;
 }
+
+
+
