@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-int num[6];
+int size=6;
+int num[size];
 void largest_element(){
     int current_max;
     current_max=num[0];
