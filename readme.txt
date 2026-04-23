@@ -1,1 +1,1 @@
-daily DSA practice using c++ during my learning journey.
+ DSA practice using c++ during my learning journey.
