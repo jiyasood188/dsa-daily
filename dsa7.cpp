@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 int main(){
-    vector<int>vec={2,0,2,1,1,0};
+    vector<int>vec= {2,0,2,1,1,0};
    int n=vec.size();
     int low=0, mid=0, high=n-1;
     while(mid<=high){
