@@ -1,4 +1,4 @@
-// brute force approach
+
 #include <iostream>
 using namespace std;
 #include <vector>
