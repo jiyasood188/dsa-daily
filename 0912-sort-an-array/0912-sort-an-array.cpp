@@ -1,68 +1,45 @@
 class Solution {
 public:
 
-    void merge(vector<int>& nums, int low, int mid, int high) {
+    int partition(vector<int>& nums, int low, int high) {
+        int randomIndex = low + rand() % (high - low + 1);
+        swap(nums[low], nums[randomIndex]);
 
-        vector<int> temp;
+        int pivot = nums[low];
+        int i = low;
+        int j = high;
 
-        int left = low;
-        int right = mid + 1;
+        while (i < j) {
 
-        
-        while (left <= mid && right <= high) {
-
-            if (nums[left] <= nums[right]) {
-                temp.push_back(nums[left]);
-                left++;
+            while (i <= high - 1 && nums[i] <= pivot) {
+                i++;
             }
-            else {
-                temp.push_back(nums[right]);
-                right++;
+
+            while (j >= low + 1 && nums[j] > pivot) {
+                j--;
+            }
+
+            if (i < j) {
+                swap(nums[i], nums[j]);
             }
         }
 
-       
-        while (left <= mid) {
-            temp.push_back(nums[left]);
-            left++;
-        }
-
-        
-        while (right <= high) {
-            temp.push_back(nums[right]);
-            right++;
-        }
-
-        
-        for (int i = low; i <= high; i++) {
-            nums[i] = temp[i - low];
-        }
+        swap(nums[low], nums[j]);
+        return j;
     }
 
+    void quicksort(vector<int>& nums, int low, int high) {
+        if (low < high) {
 
-    void mergeSort(vector<int>& nums, int low, int high) {
+            int pivotIndex = partition(nums, low, high);
 
-        if (low >= high) {
-            return;
+            quicksort(nums, low, pivotIndex - 1);
+            quicksort(nums, pivotIndex + 1, high);
         }
-
-        int mid = low + (high - low) / 2;
-
-        
-        mergeSort(nums, low, mid);
-
-       
-        mergeSort(nums, mid + 1, high);
-
-       
-        merge(nums, low, mid, high);
     }
-
 
     vector<int> sortArray(vector<int>& nums) {
-
-        mergeSort(nums, 0, nums.size() - 1);
-
+        quicksort(nums, 0, nums.size() - 1);
         return nums;
     }
 };
