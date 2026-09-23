@@ -27,6 +27,9 @@ int bruteforce(vector<int>v) {
             
         }
           
+
+
+        
     }
 int main(){
     
